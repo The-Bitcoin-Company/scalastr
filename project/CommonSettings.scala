@@ -1,4 +1,3 @@
-import com.typesafe.sbt.packager.Keys.maintainer
 import sbt.Keys._
 import sbt._
 import xerial.sbt.Sonatype.autoImport._
@@ -9,11 +8,9 @@ import scala.util.Properties
 object CommonSettings {
 
   lazy val settings: Vector[Setting[_]] = Vector(
-    scalaVersion := "2.13.12",
+    scalaVersion := "2.13.16",
     organization := "org.scalastr",
     homepage := Some(url("https://github.com/benthecarman/scalastr")),
-    maintainer.withRank(
-      KeyRanks.Invisible) := "benthecarman <benthecarman@live.com>",
     developers := List(
       Developer(
         "benthecarman",
@@ -42,7 +39,8 @@ object CommonSettings {
     Test / console / scalacOptions ++= (Compile / console / scalacOptions).value,
     Test / scalacOptions ++= testCompilerOpts(scalaVersion.value),
     licenses += ("MIT", url("https://opensource.org/licenses/MIT")),
-    resolvers ++= Resolver.sonatypeOssRepos("snapshots")
+    resolvers += Resolver.sonatypeCentralRepo("releases"),
+    resolvers += Resolver.sonatypeCentralSnapshots
   )
 
   private val commonCompilerOpts = {

@@ -48,6 +48,5 @@ ThisBuild / dynverSeparator := "-"
 //https://github.com/sbt/sbt/pull/5153
 //https://github.com/bitcoin-s/bitcoin-s/pull/2194
 Global / excludeLintKeys ++= Set(
-  com.typesafe.sbt.packager.Keys.maintainer,
   Keys.mainClass
 )

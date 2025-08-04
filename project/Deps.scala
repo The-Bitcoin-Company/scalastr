@@ -7,9 +7,9 @@ object Deps {
     val akkaStreamV = "2.6.20"
     val akkaActorV: String = akkaStreamV
 
-    val bitcoinsV = "1.9.7-412-195cfbd2-SNAPSHOT"
+    val bitcoinsV = "1.9.7"
 
-    val playV = "2.9.4"
+    val playV = "3.0.5"
 
     val testContainersV = "0.40.12"
 
@@ -19,7 +19,7 @@ object Deps {
   object Compile {
 
     val playJson =
-      "com.typesafe.play" %% "play-json" % V.playV withSources () withJavadoc ()
+      "org.playframework" %% "play-json" % V.playV withSources () withJavadoc ()
 
     val akkaHttp =
       "com.typesafe.akka" %% "akka-http" % V.akkaV withSources () withJavadoc ()
@@ -32,6 +32,12 @@ object Deps {
 
     val akkaSlf4j =
       "com.typesafe.akka" %% "akka-slf4j" % V.akkaStreamV withSources () withJavadoc ()
+
+    val akkaTestkit =
+      "com.typesafe.akka" %% "akka-testkit" % V.akkaStreamV withSources () withJavadoc ()
+
+    val akkaDiscovery =
+      "com.typesafe.akka" %% "akka-discovery" % V.akkaStreamV withSources () withJavadoc ()
 
     val grizzledSlf4j =
       "org.clapper" %% "grizzled-slf4j" % V.grizzledSlf4jV withSources () withJavadoc ()

@@ -7,7 +7,7 @@ import akka.http.scaladsl.settings._
 import akka.stream.OverflowStrategy
 import akka.stream.scaladsl._
 import grizzled.slf4j.Logging
-import org.bitcoins.core.api.tor.Socks5ProxyParams
+import org.bitcoins.tor.Socks5ProxyParams
 import org.bitcoins.core.util.StartStopAsync
 import org.bitcoins.tor.Socks5ClientTransport
 import org.scalastr.core._
